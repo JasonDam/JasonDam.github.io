@@ -102,7 +102,8 @@ const createVisualization = () => {
                 }
             })
             .attr("height", "270px")
-            .attr("stroke", "white")
+            // .attr("stroke", "white")
+            .attr("stroke","black")
             // .attr("fill", "black");
             .attr("fill", "white");
 
@@ -249,7 +250,8 @@ const createVisualization = () => {
                 if (!(d.properties["name"] === selectedCommunity)){
                     d3.select(".community-" + d.properties["name"].split(/[\s /]/).join(""))
                         .transition()
-                        .attr("stroke","white")
+                        // .attr("stroke","white")
+                        .attr("stroke","black")
                         .attr("stroke-width", 0.5)
                         .attr("stroke-opacity", 1);
                 }
