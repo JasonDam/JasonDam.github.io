@@ -12,8 +12,8 @@
 
   <title>Projects</title>
   <script src="d3.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
-  <script src="https://unpkg.com/d3-simple-slider"></script>
+  <script src="d3-legend.js"></script>
+  <script src="d3-simple-slider.js"></script>
   <script src="data/communitiesGeo.js"></script>
   <script src="data/crimeData.js"></script>
   <script src="data/lrtStationData.js"></script>
@@ -73,7 +73,7 @@
 
 
 
-    <div class="container-fluid">
+    <div id="crimeMap" class="container-fluid" style="padding-left: 0%;">
       <h2 style="color: black;">School Project: Calgary Crime and Disorder Map</h2>
 
 
@@ -82,8 +82,12 @@
 
         </div>
         <div class="legend">
-          <h1>Calgary Crime and Disorder Map</h1>
-          <p class="subtitle">CPSC 583 W20 - Group 8 Data Visualization Project</p>
+
+          <!-- <div class="container"> -->
+            <h1 style="padding: 0%;"">Calgary Crime and Disorder Map</h1>
+            <p class="subtitle">CPSC 583 W20 - Group 8 Data Visualization Project</p>
+          <!-- </div> -->
+          
           <h2>Year</h2>
           <div id="slider-step"></div>
           <div class="toggle-wrapper">

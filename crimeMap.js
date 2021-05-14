@@ -117,13 +117,13 @@ const createVisualization = () => {
                 //makes it so text will fit in box
                 if (selectedCommunity.length <= 13){
                     // return 35;
-                    return window.innerWidth * 0.01823;
+                    return document.getElementById("corimeMap").clientWidth * 0.01823;
                 } else if ( selectedCommunity.length < 19){
                     // return 24;
-                    return window.innerWidth * 0.0125;
+                    return document.getElementById("ccrimeMap").clientWidth * 0.0125;
                 } else {
                     // return 20;
-                    return window.innerWidth * 0.01042;
+                    return document.getElementById("crimeMap").clientWidth * 0.01042;
                 }
             })
             .attr("transform", "translate(10, 36)");
