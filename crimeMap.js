@@ -103,7 +103,8 @@ const createVisualization = () => {
             })
             .attr("height", "270px")
             .attr("stroke", "white")
-            .attr("fill", "black");
+            // .attr("fill", "black");
+            .attr("fill", "white");
 
         infoCard.append("text")
             .attr("class", "card-title")
@@ -150,7 +151,8 @@ const createVisualization = () => {
         }
 
         infoCard.selectAll("text")
-            .attr("fill", "white");
+            // .attr("fill", "white");
+            .attr("fill", "black");
     };
 
     const updateInfo = () => {
@@ -205,10 +207,12 @@ const createVisualization = () => {
             .attr("fill", (d) => {
                 const communityName = d.properties["name"];
                 //Colour the station communities the appropriate saturation of red, white if not station community
-                return includedCommunities.includes(communityName) ? colourScale(newCrimeCounts[communityName]) : "black";
+                // return includedCommunities.includes(communityName) ? colourScale(newCrimeCounts[communityName]) : "black";
+                return includedCommunities.includes(communityName) ? colourScale(newCrimeCounts[communityName]) : "white";
             })
             .attr("stroke", (d) => {
-                return d.properties["name"] === selectedCommunity ? "aqua" : "white";
+                // return d.properties["name"] === selectedCommunity ? "aqua" : "white";
+                return d.properties["name"] === selectedCommunity ? "aqua" : "black";
             })
             .attr("stroke-width", (d) => {
                 return d.properties["name"] === selectedCommunity ? "4" : "0.5";
@@ -283,7 +287,8 @@ const createVisualization = () => {
             });
 
         stationName.append("text")
-            .attr("fill", "white")
+            // .attr("fill", "white")
+            .attr("fill", "black")
             .attr("class", (d)=>{
                 return "station-" + d["Station Name"].split(/[\s /]/).join("");
             })
@@ -317,7 +322,8 @@ const createVisualization = () => {
             .call(legend);
 
         legendBox.selectAll(".label")
-            .attr("fill", "white")
+            // .attr("fill", "white")
+            .attr("fill", "black")
 
         //Create slider
         //Years from 2012 - 2019 for our slider axis
@@ -351,7 +357,8 @@ const createVisualization = () => {
         sliderChange.call(yearSlider);
 
         d3.select("#slider-step").select("svg")
-            .attr("fill", "white")
+            // .attr("fill", "white")
+            .attr("fill", "black")
             .attr("transform", "translate(-15, 0)");
 
         d3.select("#slider-step").select(".slider")
@@ -389,10 +396,12 @@ const createVisualization = () => {
             .attr("fill", (d) => {
                 const communityName = d.properties["name"];
                 //Colour the station communities the appropriate saturation of red, white if not station community
-                return includedCommunities.includes(communityName) ? colourScale(newCrimeCounts[communityName]) : "black";
+                // return includedCommunities.includes(communityName) ? colourScale(newCrimeCounts[communityName]) : "black";
+                return includedCommunities.includes(communityName) ? colourScale(newCrimeCounts[communityName]) : "white";
             })
             .attr("stroke", (d) => {
-                return d.properties["name"] === selectedCommunity ? "aqua" : "white";
+                // return d.properties["name"] === selectedCommunity ? "aqua" : "white";
+                return d.properties["name"] === selectedCommunity ? "aqua" : "black";
             })
             .attr("stroke-width", (d) => {
                 return d.properties["name"] === selectedCommunity ? "4" : "0.5";
