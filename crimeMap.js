@@ -94,11 +94,14 @@ const createVisualization = () => {
             .attr("class", "crime-card")
             .attr("width", (d) => {
                 if (selectedCommunity.length <= 13){
-                    return "315px";
+                    // return "315px";
+                    return "16.4%";
                 } else if ( selectedCommunity.length < 19){
-                    return "345px";
+                    // return "345px";
+                    return "17.96%";
                 } else {
-                    return "390px";
+                    // return "390px";
+                    return "20.31%";
                 }
             })
             .attr("height", "270px")
@@ -113,11 +116,14 @@ const createVisualization = () => {
             .attr("font-size", (d) => {
                 //makes it so text will fit in box
                 if (selectedCommunity.length <= 13){
-                    return 35;
+                    // return 35;
+                    return ($(document).width()) * 0.01823;
                 } else if ( selectedCommunity.length < 19){
-                    return 24;
+                    // return 24;
+                    return ($(document).width()) * 0.0125;
                 } else {
-                    return 20;
+                    // return 20;
+                    return ($(document).width()) * 0.01042;
                 }
             })
             .attr("transform", "translate(10, 36)");
@@ -237,7 +243,8 @@ const createVisualization = () => {
                         .transition()
                         .attr("stroke","aqua")
                         .attr("stroke-width", 4)
-                        .attr("stroke-opacity", 0.5);
+                        // .attr("stroke-opacity", 0.5);
+                        .attr("stroke-opacity", 1);
                 }
                 //For communities far from stations, turn stroke thicker
                 else {
