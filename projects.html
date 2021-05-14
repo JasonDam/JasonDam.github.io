@@ -12,18 +12,18 @@
 
   <title>Projects</title>
   <script src="./d3.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
-    <script src="https://unpkg.com/d3-simple-slider"></script>
-    <script src="../data/communitiesGeo.js"></script>
-    <script src="../data/crimeData.js"></script>
-    <script src="../data/lrtStationData.js"></script>
-    <script src="../data/communityStations.js"></script>
-    <script src="./crimeMap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+  <script src="https://unpkg.com/d3-simple-slider"></script>
+  <script src="../data/communitiesGeo.js"></script>
+  <script src="../data/crimeData.js"></script>
+  <script src="../data/lrtStationData.js"></script>
+  <script src="../data/communityStations.js"></script>
+  <script src="./crimeMap.js"></script>
   <script src="index.js"></script>
 </head>
 
 <body>
-    
+
   <div class="content">
     <div>
       <div class="topBar">
@@ -42,9 +42,9 @@
         </div>
 
         <!-- <div> -->
-          <a href="index.html" ></a><img src="Banner.png" class="banner"></a>
+        <a href="index.html"></a><img src="Banner.png" class="banner"></a>
         <!-- </div> -->
-        
+
 
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -85,10 +85,40 @@
       <h1 style="color: black;">Welcome to My Site</h1>
 
 
-      
+      <div class="wrapper">
+        <div class="map">
+
+        </div>
+        <div class="legend">
+          <h1>Calgary Crime and Disorder Map</h1>
+          <p class="subtitle">CPSC 583 W20 - Group 8 Data Visualization Project</p>
+          <h2>Year</h2>
+          <div id="slider-step"></div>
+          <div class="toggle-wrapper">
+            <h3>Show Communities near LRT Stations Only</h3>
+            <div class="toggle-button-cover">
+              <div class="button-cover">
+                <div class="button r" id="button-1">
+                  <input type="checkbox" class="checkbox" id="map-toggle">
+                  <div class="knobs"></div>
+                  <div class="layer"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description-wrap">
+
+      </div>
+      <script>
+        createVisualization();
+      </script>
+
+
     </div>
 
-    
+
     <div class="footer border-dark rounded">
       <!-- Footer Links -->
       <div class="container-fluid text-center text-md-left">
