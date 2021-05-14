@@ -1,0 +1,291 @@
+.footer {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  width: 100%;
+  background-color: lightGray;
+  color: black;
+  text-align: center;
+  align-content: center;
+  position: relative;
+  bottom: 0%;
+}
+
+html,body {
+  /* padding-left: 10%;
+  padding-right: 10%; */
+  /* needed for container min-height */
+  background: #DEDEDE;
+
+  font-family:arial,sans-serif;
+  font-size:small;
+  color:#666;
+}
+
+.topBar{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  align-content: center;
+}
+
+.content{
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+}
+
+.parallax{
+  background-image: url("Other Images/parallaxIMG3.png");
+  min-height: 250px;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position:botton;
+  background-repeat: inherit;
+}
+
+.hrWhite{
+  border-color: white;
+}
+
+.parallaxFooter{
+  background-color: #666;
+  min-height: 100px;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.welcomeText{
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 50px;
+  padding-right: 5%;
+  background-color:rgba(0,0,0,0);
+}
+
+.container-fluid{
+  max-width: 95%;
+  padding-top: 1%; 
+  overflow: hidden;
+}
+
+.menu{
+  /* margin: auto; */
+  width: 50px;
+  height: 50px;
+  position: center;
+  display: inline-block;
+  align-items: center;
+  border: none;
+  /* border: 50%; */
+  /* padding-top: 2.5%; */
+  /* padding-bottom: 2.5%; */
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.menu-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.menuBut{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  background-image: url(menu.png);
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center;
+}
+
+.banner{
+  position:absolute;
+  max-width: 100%;
+  height: auto;
+  /* top: 20px; */
+  /* margin-left: 50px; */
+  margin-top: 0%;
+  cursor: pointer;
+
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.menu a:hover {background-color: #ddd;}
+
+.menuBut:focus, .button:focus, [type="submit"]:focus{
+  outline:none;
+}
+
+.show{
+  display: block;
+  border: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description-wrap {
+  width: 900px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  margin-bottom: 65px;
+  font-size: 14px;
+}
+
+/* h1, h2, h3, div {
+  color: white;
+  font-family: Gill Sans,sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-weight: lighter;
+} */
+
+path {
+}
+
+/*================================================================
+  THIS SECTION OF THE CODE WAS USED FROM THIS RESOURCE
+  THIS WAS ISED PFR TJE PROJECT
+  https://codepen.io/himalayasingh/pen/EdVzNL
+=================================================================*/
+.toggle-button-cover
+{
+  display: table-cell;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.button-cover
+{
+  height: 60px;
+  border-radius: 4px;
+  background-color: black;
+}
+
+.button-cover, .knobs, .layer
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button
+{
+  position: relative;
+  top: 50%;
+  width: 80px;
+  height: 36px;
+  overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+  border-radius: 100px;
+}
+
+.button.b2
+{
+  border-radius: 2px;
+}
+
+.checkbox
+{
+  position: relative;
+  width: 90%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs
+{
+  z-index: 2;
+}
+
+.layer
+{
+  width: 90%;
+  background-color: black;
+  border: white solid 1px;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+/* Button 1 */
+#button-1 .knobs:before
+{
+  content: 'OFF';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 10px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  background-color: black;
+  border: white solid 1px;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-1 .checkbox:checked + .knobs:before
+{
+  content: 'ON';
+  left: 42px;
+  background-color: #d12959;
+  border: #d12959 solid 1px;
+
+}
+
+#button-1 .checkbox:checked ~ .layer
+{
+  background-color: black;
+  border: #d12959 solid 1px;
+  color: #fff;
+}
+
+#button-1 .knobs, #button-1 .knobs:before, #button-1 .layer
+{
+  transition: 0.3s ease all;
+}
+/*================================================================
+  END OF SECTION
+=================================================================*/

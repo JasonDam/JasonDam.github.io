@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    body {
+        background-color: black;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .legend {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .description-wrap {
+        width: 900px;
+    }
+
+    .subtitle {
+        margin-top: 6px;
+        margin-bottom: 65px;
+        font-size: 14px;
+    }
+
+    h1, h2, h3, div {
+        color: white;
+        font-family: Gill Sans,sans-serif;
+        margin: 0;
+    }
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    path {
+    }
+
+    /*================================================================
+        THIS SECTION OF THE CODE WAS USED FROM THIS RESOURCE
+        https://codepen.io/himalayasingh/pen/EdVzNL
+    =================================================================*/
+    .toggle-button-cover
+    {
+        display: table-cell;
+        position: relative;
+        width: 200px;
+        height: 100px;
+        box-sizing: border-box;
+    }
+
+    .button-cover
+    {
+        height: 60px;
+        border-radius: 4px;
+        background-color: black;
+    }
+
+    .button-cover, .knobs, .layer
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .button
+    {
+        position: relative;
+        top: 50%;
+        width: 80px;
+        height: 36px;
+        overflow: hidden;
+    }
+
+    .button.r, .button.r .layer
+    {
+        border-radius: 100px;
+    }
+
+    .button.b2
+    {
+        border-radius: 2px;
+    }
+
+    .checkbox
+    {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .knobs
+    {
+        z-index: 2;
+    }
+
+    .layer
+    {
+        width: 90%;
+        background-color: black;
+        border: white solid 1px;
+        transition: 0.3s ease all;
+        z-index: 1;
+    }
+
+    /* Button 1 */
+    #button-1 .knobs:before
+    {
+        content: 'OFF';
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 20px;
+        height: 10px;
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1;
+        padding: 9px 4px;
+        background-color: black;
+        border: white solid 1px;
+        border-radius: 50%;
+        transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+    }
+
+    #button-1 .checkbox:checked + .knobs:before
+    {
+        content: 'ON';
+        left: 42px;
+        background-color: #d12959;
+        border: #d12959 solid 1px;
+
+    }
+
+    #button-1 .checkbox:checked ~ .layer
+    {
+        background-color: black;
+        border: #d12959 solid 1px;
+        color: #fff;
+    }
+
+    #button-1 .knobs, #button-1 .knobs:before, #button-1 .layer
+    {
+        transition: 0.3s ease all;
+    }
+    /*================================================================
+        END OF SECTION
+    =================================================================*/
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Calgary Crime and Disorder Map</title>
+
+    <script src="d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="/data/communitiesGeo.js"></script>
+    <script src="/data/crimeData.js"></script>
+    <script src="/data/lrtStationData.js"></script>
+    <script src="/data/communityStations.js"></script>
+    <script src="./crimeMap.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="map">
+
+    </div>
+    <div class="legend">
+        <h1>Calgary Crime and Disorder Map</h1>
+        <p class="subtitle">CPSC 583 W20 - Group 8 Data Visualization Project</p>
+        <h2>Year</h2>
+        <div id="slider-step"></div>
+        <div class="toggle-wrapper">
+            <h3>Show Communities near LRT Stations Only</h3>
+            <div class="toggle-button-cover">
+                <div class="button-cover">
+                    <div class="button r" id="button-1">
+                        <input type="checkbox" class="checkbox" id="map-toggle">
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="description-wrap">
+
+</div>
+<script>
+    createVisualization();
+</script>
+</body>

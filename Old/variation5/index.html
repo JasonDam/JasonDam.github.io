@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Variation 5</title>
+    <style>
+        path {
+            fill: #ccc;
+            stroke: #fff;
+            stroke-width: .5px;
+        }
+
+    </style>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <script src="../data/communitiesGeo.js"></script>
+    <script src="../data/crimeData.js"></script>
+    <script src="../data/lrtStationData.js"></script>
+    <script src="../data/communityStations.js"></script>
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <script>
+        createVisualization();
+    </script>
+    <div style="height: 350px; width: 1000px">
+        <h1>Variation 5</h1>
+        <p>This variation uses a box at the bottom of the screen to display a selected train station's data. In the final implementation, we hope to
+        have an interaction where the user could press a train station (selected station will be red) and all of the related communities crime data will be
+        shown in the box at the bottom left of the map.</p>
+    </div>
+</body>
+</html>

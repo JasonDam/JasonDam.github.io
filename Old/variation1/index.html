@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .legend {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .description-wrap {
+        width: 900px;
+    }
+
+    path {
+        stroke: black;
+        stroke-width: .5px;
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Station Crime Map Variation 1</title>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <script src="../data/communitiesGeo.js"></script>
+    <script src="../data/crimeData.js"></script>
+    <script src="../data/lrtStationData.js"></script>
+    <script src="../data/communityStations.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="map">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1850px" height="900px" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet" >
+                <polyline style="stroke:blue;fill:none;stroke-width:20px;" id="redline" points="1000.13 28.625 999.125 285.625 853.125 284.625 805.125 308.625 262.125 308.625 223.125 341.625 33.125 339.625"/>
+                <polyline style="stroke:red;fill:none;stroke-width:20px;" id="blueline" points="97.125 49.625 354.125 215.625 418.125 216.625 414.125 329.625 808.125 330.625 806.125 857.625"/>
+                <circle id="Saddletowne" cx="1000.125" cy="33.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Martindale" cx="1000.125" cy="82.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="McKnight Westwinds" cx="1000.125" cy="128.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Whitehorn" cx="1000.125" cy="174.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Rundle" cx="1000.125" cy="220.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Marlborough" cx="1000.125" cy="266.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Franklin" cx="974.125" cy="285.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Barlow / Max Bell" cx="939.125" cy="285.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Zoo" cx="905.125" cy="285.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Bridgeland / Memorial" cx="871.125" cy="285.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="City Hall WB" cx="793.125" cy="317.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Centre St" cx="747.125" cy="317.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="1 St SW" cx="701.125" cy="317.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="3 St SW" cx="659.125" cy="317.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="4 St SW" cx="611.125" cy="317.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="6 St SW" cx="563.125" cy="317.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="7 St SW" cx="515.125" cy="317.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="8 St SW" cx="463.125" cy="317.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Downtown West - Kerby Station" cx="379.125" cy="309.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Sunalta" cx="325.125" cy="309.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Shaganappi Point" cx="271.125" cy="309.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Westbrook" cx="233.125" cy="333.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="45 St SW" cx="185.125" cy="341.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Sirocco" cx="117.125" cy="339.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="69 St SW" cx="41.125" cy="339.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Sunnyside" cx="417.125" cy="259.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="SAIT/ACAD/Jubilee" cx="403.125" cy="215.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Lions Park" cx="353.125" cy="211.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Banff Trail" cx="307.125" cy="185.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="University" cx="257.125" cy="153.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Brentwood" cx="211.125" cy="123.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Dalhousie" cx="157.125" cy="87.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Tuscany" cx="102.70668029785156" cy="53.20668029785156" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Victoria Park / Stampede" cx="808.125" cy="365.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Erlton / Stampede" cx="808.125" cy="411.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="39 Avenue" cx="808.125" cy="457.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Chinook" cx="808.125" cy="503.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Heritage" cx="808.125" cy="549.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Southland" cx="808.125" cy="601.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Anderson" cx="808.125" cy="653.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Canyon Meadows" cx="808.125" cy="703.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Fish Creek - Lacombe" cx="808.125" cy="753.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Shawnessy" cx="806.125" cy="803.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+                <circle id="Somerset-Bridlewood" cx="806.125" cy="851.625" style="stroke: black; stroke-width: 5px;fill:white;" r="10"/>
+            </svg>
+        </div>
+        <div class="legend">
+
+        </div>
+    </div>
+    <div class="description-wrap">
+        <p>
+            Variation 1: A static map of the Calgary LRT map which displays all LRT stations for Calgary Transit.
+            The visualization is currently selected at Marlborough Station. Information about crime count in the surrounding communities
+            of the selected station is displayed in a card. This visualization focuses purely on the stations and does not display
+            any geo data of the communities. The LRT station map is also not an accurate representation of how the stations are
+            dispersed geographically. However, this map evenly spaces stations apart from each other making it easy to view every station.
+        </p>
+    </div>
+    <script>
+        createVisualization();
+    </script>
+</body>

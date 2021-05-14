@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+<!--Rename a few things-->
+    <title>Crime Visualization</title>
+    <script src="coordinates.js"></script>
+    <!--   Old data file:  <script src="tutData.js"></script>-->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<!--Can probably delete the bottom commented out stuff-->
+<!--<div class="row">-->
+<!--    <svg id="chart" width="800" height="400" viewBox="0 0 800 400">-->
+<!--        <rect class="bg"></rect>-->
+<!--    </svg>-->
+    <svg id="chartScatter" width="800" height="1200" viewBox="0 0 800 1200">
+        <rect class="bg"></rect>
+    </svg>
+<!--</div>-->
+<!--<svg id="chart2" width="800" height="400" viewBox="0 0 400 200">-->
+<!--    <rect class="bg"></rect>-->
+<!--</svg>-->
+<script>
+    makeScatter("chartScatter");
+</script>
+</body>
+</html>

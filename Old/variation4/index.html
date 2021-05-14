@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .legend {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .description-wrap {
+        width: 900px;
+    }
+
+    path {
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Station Crime Map Variation 4</title>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <script src="../data/communitiesGeo.js"></script>
+    <script src="../data/crimeData.js"></script>
+    <script src="../data/lrtStationData.js"></script>
+    <script src="../data/communityStations.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="map">
+
+        </div>
+        <div class="legend">
+
+        </div>
+    </div>
+    <div class="description-wrap">
+        <p>
+            Variation 4: A static map of Calgary which displays all the LRT stations in calgary as well as every community in Calgary.
+            The communities which are surrounding the station are filled with a colour. The colour of the community corresponds to the
+            crime count of the community according to the legend.
+        </p>
+        <p>
+            The communities are supposed to be selectable in the fully interactive version and crime info for the selected community
+            is displayed in a card on the right side above the legend. For this static implementation, the community Varsity is currently
+            selected.
+        </p>
+    </div>
+    <script>
+        createVisualization();
+    </script>
+</body>
