@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+.navButton{
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: rgb(236, 236, 236);
+    border-radius: 4px;
+  }
+  nav a:visited, a:link {
+    color: #607D8B;
+  }
+  nav a:hover {
+    color: #039be5;
+    background-color: #CFD8DC;
+  }
+  nav a.active {
+    color: #039be5;
+  }
+
+.navTitle{
+    font-size: 28px;
+    padding: 5px 10px;
+    margin-top: 10px;
+}

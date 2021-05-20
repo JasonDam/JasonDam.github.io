@@ -1,0 +1,10 @@
+<div class="topBar">
+    <nav>
+        <a class="navTitle" routerLink="/{{ routeNav(title) }}" routerLinkActive="active">{{ title }}</a>
+        <a class="navButton" *ngFor="let component of components" routerLink="/{{ routeNav(component) }}" routerLinkActive="active">
+            {{ component }}
+        </a>
+    </nav>
+    
+</div>
+
