@@ -1,148 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="myStyles.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <title>Home</title>
-  <script src="index.js"></script>
+    <meta charset="UTF-8">
+    <title>Navigation Page</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <script src="../data/communitiesGeo.js"></script>
+    <script src="../data/crimeData.js"></script>
+    <script src="../data/lrtStationData.js"></script>
+    <script src="../data/communityStations.js"></script>
+    <script src="./index.js"></script>
 </head>
-
 <body>
-  <div class="content">
-    <div>
-      <div class="topBar">
-        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 20px; padding-top: 1%;
-    padding-bottom: 1%;"> -->
-
-        <div class="menu">
-          <button onclick="dropDownMenu()" class="menuBut"></button>
-          <div id="dropDownMenu" class="menu-content">
-            <a href="index.html">Home</a>
-            <a href="aboutMe.html">About Me</a>
-            <a>Career</a>
-            <a href="project2.html">Projects</a>
-            <a>Contact</a>
-          </div>
-        </div>
-
-        <!-- <div> -->
-          <a href="index.html" ></a><img src="Banner.png" class="banner"></a>
-        <!-- </div> -->
-        
-
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
-
-        <!-- <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 24px">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-link active"><a class="nav-link" href="#"> Home <span class="sr-only">(current)</span> </a>
-          </li>
-          <li class="nav-link"><a class="nav-link" href="about.md"> About </a></li>
-          <li class="nav-link"><a class="nav-link" href="#"> Projects </a></li>
-          <li class="nav-link"><a class="nav-link" href="#"> Contact </a></li>
-        </ul>
-      </div> -->
-      </div>
-      <!-- </nav> -->
-    </div>
-
-    <div class="parallax">
-      <div class="welcomeText">
-        <font color="white">
-          <h1> Welcome to my website!</h1>
-          <p>Updates and related recent information will be posted here as a highlight on this website</p>
-          <hr class="hrWhite">
-          <p>Other smaller updates will be placed here</p>
-          <p class="lead">
-        </font>
-        <a class="btn btn-primary btn-lg" href="#" role="button">About Me</a>
-        </p>
-      </div>
-    </div>
-
-
-
-    <div class="container-fluid">
-      <div
-        style="width: 25%; float: left; padding: 1%; background-color: #F4F4F4; font-size: 29px; font-family: Lucida Console;">
-        What is this site?
-      </div>
-      <div style="margin-left: 30%; font-size: 24px;"> This website was developed by me, Jason Dam, as a personal
-        project
-        to be used as a personal portfollio.
-        This site contains personal information about me, what projects I am currently working on, and my contact
-        information.
-      </div>
-    </div>
-
-    <hr style="width: 80%;">
-
-
-
-    <div class="container-fluid">
-      <h1>Welcome to My Site</h1>
-      <p>
-        Please note that this site is still under construction, thank you for understanding.
-      </p>
-    </div>
-
-    <div class="footer border-dark rounded">
-      <!-- Footer Links -->
-      <div class="container-fluid text-center text-md-left">
-        <!-- Grid row -->
-        <div class="row">
-          <!-- Grid column -->
-          <div class="col-md-4 mt-md-0 mt-3">
-            <div class="footerContent;">
-              <!-- Content -->
-              <h5 class="text-uppercase font-weight-bold">Contact Information</h5>
-              <a href="mailto:#">Email me: Jasondambusiness@gmail.com</a><br>
-              <a href="tel:5879988249">Cell Phone</a>
-
-            </div>
-
-          </div>
-          <!-- Grid column -->
-
-          <hr class="clearfix w-100 d-md-none pb-3">
-
-          <!-- Grid column -->
-          <div class="col-md-5 mb-md-0 mb-3" font size="8">
-            <div class="footerContent">
-
-              <h5 class="text-uppercase font-weight-bold">More Information</h5>
-              <p>Just put some sort of explanation here or something that will stay here giving like a brief summary
-                of what they do or what ever they want, also this can always be changed to anything you want it is just
-                extra info that is usually at the
-                bottom.</p>
-            </div>
-          </div>
-          <!-- Grid column -->
-          <!-- Grid column -->
-          <div class="col-md-3 mb-md-0 mb-3">
-            <div class="footerContent">
-              <h5 class="text-uppercase font-weight-bold">Webpage Information</h5>
-              <p>
-                This page was made with bootstrap.
-              </p>
-            </div>
-          </div>
-          <!-- Grid column -->
-          <!-- Grid row -->
-        </div>
-      </div>
-      <!-- Footer Links -->
-      <!-- Copyright -->
-    </div>
-  </div>
+<h1>CPSC 583 W20 - Group 8 Data Visualization Project</h1>
+<h2>Members: Jason Dam, Brandon Sin, Garland Khuu</h2>
+<a class="nav-link" href="/variation1/index.html"> Variation 1 </a><br>
+<a class="nav-link" href="/variation2/index.html"> Variation 2 </a><br>
+<a class="nav-link" href="/variation3/index.html"> Variation 3 </a><br>
+<a class="nav-link" href="/variation4/index.html"> Variation 4 </a><br>
+<a class="nav-link" href="/variation5/index.html"> Variation 5 </a><br>
+<a class="nav-link" href="/variation6/index.html"> Variation 6 </a><br>
+<a class="nav-link" href="/variation7/index.html"> Variation 7 </a><br>
+<a class="nav-link" href="/variation8/index.html"> Variation 8 </a><br>
+<a class="nav-link" href="/variation9/index.html"> Variation 9 </a><br>
+<a class="nav-link" href="/final-implementation/index.html"> Final Implementation </a><br>
 </body>
-
 </html>
